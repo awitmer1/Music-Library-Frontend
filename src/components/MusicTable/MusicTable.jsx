@@ -1,9 +1,9 @@
 import React from "react";
 
-const MusicTable = (props) => {
+const MusicTable = ({songs}) => {
   return (
     <div className="table-container">
-      <h3>MusicTable</h3>
+      <h3>Music Table</h3>
       <table className="table">
         <thead>
           <tr>
@@ -15,14 +15,14 @@ const MusicTable = (props) => {
           </tr>
         </thead>
         <tbody>
-          {props.songs.map((entry, index) => {
+          {songs.map((songs, id) => {
             return (
-              <tr key={index}>
-                <td>{props.songs.title}</td>
-                <td>{props.songs.artist}</td>
-                <td>{props.songs.album}</td>
-                <td>{props.songs.release_date}</td>
-                <td>{props.songs.genre}</td>
+              <tr key={songs.id}>
+                <td>{songs.title}</td>
+                <td>{songs.artist}</td>
+                <td>{songs.album}</td>
+                <td>{songs.release_date}</td>
+                <td>{songs.genre}</td>
               </tr>
             );
           })}
