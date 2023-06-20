@@ -5,6 +5,7 @@ import Header from "./components/Header/Header";
 import MusicTable from "./components/MusicTable/MusicTable";
 import SearchBar from "./components/SearchBar/SearchBar";
 import axios from "axios";
+import AddMusic from "./components/AddMusic/AddMusic";
 
 function App() {
   const [songs, setSongs] = useState([]);
@@ -13,6 +14,16 @@ function App() {
   useEffect(() => {
     getAllSongs();
   }, []);
+
+  useEffect (() => {
+    let filteredSongs = songs;
+
+    if (search != "") {
+      filteredSongs = filteredSongs.filter((song) => song.data.includes(search))
+    }
+
+    setSongs(filteredSongs);
+  }, [search]);
 
   async function getAllSongs() {
     const response = await axios.get("http://127.0.0.1:8000/api/music/");
@@ -24,7 +35,7 @@ function App() {
     <>
       <Header />
       <body className="app-body">
-        <SearchBar songs={songs} search={search} setSearch={setSearch}/>
+        <AddMusic/>
         <MusicTable songs={songs} />
       </body>
     </>

@@ -1,4 +1,5 @@
 import React from "react";
+import SearchBar from "../SearchBar/SearchBar";
 // import 'bootstrap/dist/css/bootstrap.min.css';  
 // // import Table from 'react-bootstrap/Table'
 // import {Table} from 'react-bootstrap';  
@@ -6,7 +7,7 @@ import React from "react";
 const MusicTable = ({songs}) => {
   return (
     <div className="table-container">
-      <h3>Music Table</h3>
+      <SearchBar />
       <table>
         <thead>
           <tr>

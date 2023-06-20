@@ -26,19 +26,7 @@ header {
     gap: 1rem;
 }
 
-div.table-container {
-    border: 5px solid blue;
-    background: white;
-    display: flex;
-    margin-right: auto;
-    padding: 1rem;
-    background-color: rgb(192,192,192);
-    /* opacity: 0.6; */
-    border-radius: 15px;
-    flex-direction: column;
-}
-
-div.search-bar {
+div.add-music {
     border: 5px solid green;
     /* background: white; */
     display: flex;
@@ -49,16 +37,35 @@ div.search-bar {
     border-radius: 15px;
 }
 
-table {
+div.search-bar {
     display: flex;
-    /* width: 100%; */
+    justify-content: center;
+    padding: 1rem;
+    gap: 2rem;
+    height: 1.75em;
+}
+
+input {
+    width: 20rem;
+}
+
+div.table-container {
+    border: 5px solid blue;
+    background: white;
+    display: flex;
+    margin-right: auto;
+    padding: 1rem;
+    background-color: rgb(192,192,192);
+    opacity: 0.6;
+    border-radius: 15px;
+    flex-direction: column;
 }
 
 th, td {
-    padding: 10px
+    padding: 10px;
 }
 
 tr {
-    border-bottom: 2px solid #ddd;
+    border-bottom: 2px solid black;
 }
 
