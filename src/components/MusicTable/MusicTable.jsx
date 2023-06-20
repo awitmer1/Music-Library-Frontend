@@ -1,10 +1,13 @@
 import React from "react";
+// import 'bootstrap/dist/css/bootstrap.min.css';  
+// // import Table from 'react-bootstrap/Table'
+// import {Table} from 'react-bootstrap';  
 
 const MusicTable = ({songs}) => {
   return (
     <div className="table-container">
       <h3>Music Table</h3>
-      <table className="table">
+      <table>
         <thead>
           <tr>
             <th>Title</th>
@@ -15,7 +18,7 @@ const MusicTable = ({songs}) => {
           </tr>
         </thead>
         <tbody>
-          {songs.map((songs, id) => {
+          {songs.map((songs) => {
             return (
               <tr key={songs.id}>
                 <td>{songs.title}</td>

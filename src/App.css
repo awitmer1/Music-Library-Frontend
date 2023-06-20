@@ -28,13 +28,14 @@ header {
 
 div.table-container {
     border: 5px solid blue;
-    /* background: white; */
+    background: white;
     display: flex;
     margin-right: auto;
-    padding: 5rem;
+    padding: 1rem;
     background-color: rgb(192,192,192);
-    opacity: 0.6;
+    /* opacity: 0.6; */
     border-radius: 15px;
+    flex-direction: column;
 }
 
 div.search-bar {
@@ -50,7 +51,14 @@ div.search-bar {
 
 table {
     display: flex;
+    /* width: 100%; */
 }
 
+th, td {
+    padding: 10px
+}
 
+tr {
+    border-bottom: 2px solid #ddd;
+}
 
