@@ -4,10 +4,10 @@ import SearchBar from "../SearchBar/SearchBar";
 // // import Table from 'react-bootstrap/Table'
 // import {Table} from 'react-bootstrap';  
 
-const MusicTable = ({songs}) => {
+const MusicTable = ({songs, search, setSearch}) => {
   return (
     <div className="table-container">
-      <SearchBar />
+      <SearchBar songs={songs} search={search} setSearch={setSearch}/>
       <table>
         <thead>
           <tr>

@@ -10,20 +10,24 @@ import AddMusic from "./components/AddMusic/AddMusic";
 function App() {
   const [songs, setSongs] = useState([]);
   const [search, setSearch] = useState("");
+  // const [buttonClick, setButtonClick] = useState("");
+
 
   useEffect(() => {
     getAllSongs();
   }, []);
 
-  useEffect (() => {
-    let filteredSongs = songs;
 
-    if (search != "") {
-      filteredSongs = filteredSongs.filter((song) => song.data.includes(search))
-    }
 
-    setSongs(filteredSongs);
-  }, [search]);
+  // useEffect (() => {
+  //   let filteredSongs = songs;
+
+  //   if (buttonClick !== "") {
+  //     filteredSongs = filteredSongs.filter((song) => song.title.includes(buttonClick))
+  //   }
+
+  //   setSongs(filteredSongs);
+  // }, [buttonClick]);
 
   async function getAllSongs() {
     const response = await axios.get("http://127.0.0.1:8000/api/music/");
@@ -36,7 +40,7 @@ function App() {
       <Header />
       <body className="app-body">
         <AddMusic/>
-        <MusicTable songs={songs} />
+        <MusicTable songs={songs} search={search} setSearch={setSearch}/>
       </body>
     </>
   );

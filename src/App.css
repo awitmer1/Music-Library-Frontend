@@ -1,5 +1,5 @@
 html {
-    background-image: url('C:\Users\thewi\Desktop\dCC Projects\Music-Library-Frontend\public\dan-stark-JiSNvVs3keU-unsplash.jpg');
+    background-image: url('C:\Users\thewi\Desktop\dCC Projects\Music-Library-Frontend\public\bg-edit-1.png');
     background-repeat: no-repeat;
     background-attachment: fixed;  
     background-size: cover;
@@ -32,8 +32,8 @@ div.add-music {
     display: flex;
     margin-left: auto;
     padding: 5rem;
-    background-color: rgb(192,192,192);
-    opacity: 0.6;
+    background-color: rgb(0,0,0,.75);
+    /* opacity: 0.6; */
     border-radius: 15px;
 }
 
@@ -47,6 +47,11 @@ div.search-bar {
 
 input {
     width: 20rem;
+    color: black;
+}
+
+button {
+    color: black;
 }
 
 div.table-container {
@@ -55,8 +60,8 @@ div.table-container {
     display: flex;
     margin-right: auto;
     padding: 1rem;
-    background-color: rgb(192,192,192);
-    opacity: 0.6;
+    background-color: rgb(0,0,0,.75);
+    /* opacity: 0.6; */
     border-radius: 15px;
     flex-direction: column;
 }
