@@ -10,9 +10,9 @@ html {
 }
 header {
     min-height: 8rem;
-    border: 5px solid red;
     display: flex;
-    background-color: rgb(0,0,0,.75);
+    background-color: rgb(8, 28, 21, .75);
+    color: rgb(216, 243, 220);
     align-content: center;
     align-items: center;
     padding-left: 2rem;
@@ -27,7 +27,7 @@ header {
 }
 
 div.add-music {
-    border: 5px solid green;
+    border: 5px solid rgb(64, 145, 108);
     /* background: white; */
     /* display: flex; */
     margin-left: auto;
@@ -48,6 +48,7 @@ div.search-bar {
     padding: 1rem;
     gap: 2rem;
     height: 1.75em;
+    margin-bottom: 1rem;
 }
 
 input {
@@ -56,11 +57,12 @@ input {
 }
 
 button {
-    color: black;
+    color: rgb(8, 28, 21);
+    background-color: rgb(149, 213, 178);
 }
 
 div.table-container {
-    border: 5px solid blue;
+    border: 5px solid rgb(64, 145, 108);
     background: white;
     display: flex;
     margin-right: auto;
@@ -85,4 +87,14 @@ label {
 
 input {
     width: 12rem;
+}
+
+h4, th {
+    font-size: large;
+    color: rgb(216, 243, 220);
+}
+
+button.add-music-button {
+    margin-top: 1rem;
+    padding: .35rem;
 }
