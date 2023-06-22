@@ -7,7 +7,7 @@ const SearchBar = ({ search, setSearch}) => {
     const onSearch = (searchTerm) => {
         console.log('search', searchTerm);
         setSearch(query);
-        setQuery('');
+        setQuery('')
     }
 
     return (

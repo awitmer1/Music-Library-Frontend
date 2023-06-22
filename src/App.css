@@ -29,12 +29,17 @@ header {
 div.add-music {
     border: 5px solid green;
     /* background: white; */
-    display: flex;
+    /* display: flex; */
     margin-left: auto;
     padding: 5rem;
     background-color: rgb(0,0,0,.75);
     /* opacity: 0.6; */
     border-radius: 15px;
+    flex-direction: column;
+}
+
+div.form-container {
+    display: block;
 }
 
 div.search-bar {
@@ -74,3 +79,10 @@ tr {
     border-bottom: 2px solid black;
 }
 
+label {
+    padding-right: 2rem;
+}
+
+input {
+    width: 12rem;
+}
