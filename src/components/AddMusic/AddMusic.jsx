@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
+import axios from "axios";
 
-
-const AddMusic = (props) => {
+const AddMusic = ({setAddMusicBtn}) => {
 
   const [inputs, setInputs] = useState([]);
 
@@ -12,9 +12,17 @@ const AddMusic = (props) => {
   }
 
   const handleSubmit = (event) => {
+
     event.preventDefault();
+
     console.log(inputs);
-    alert(inputs);
+
+    axios.post('http://127.0.0.1:8000/api/music/',inputs).then((response) => {
+    console.log(response.status, response.data.token);});
+
+    setInputs([""]);
+
+    setAddMusicBtn("click");
   }
 
 

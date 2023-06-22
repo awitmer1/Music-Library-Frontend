@@ -3,20 +3,19 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import Header from "./components/Header/Header";
 import MusicTable from "./components/MusicTable/MusicTable";
-import SearchBar from "./components/SearchBar/SearchBar";
 import axios from "axios";
 import AddMusic from "./components/AddMusic/AddMusic";
 
 function App() {
+
   const [songs, setSongs] = useState([]);
   const [search, setSearch] = useState("");
-  // const [buttonClick, setButtonClick] = useState("");
-
+  const [addMusicBtn, setAddMusicBtn] = useState("");
 
   useEffect(() => {
     getAllSongs();
-  }, []);
-
+    setAddMusicBtn("")
+  }, [addMusicBtn]);
 
 
   // useEffect (() => {
@@ -35,14 +34,11 @@ function App() {
     setSongs(response.data);
   }
 
-  // TODO Create state for add music button
-
-
   return (
     <>
       <Header />
       <body className="app-body">
-        <AddMusic/>
+        <AddMusic setAddMusicBtn={setAddMusicBtn}/>
         <MusicTable songs={songs} search={search} setSearch={setSearch}/>
       </body>
     </>
