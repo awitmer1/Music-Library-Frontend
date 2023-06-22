@@ -1,7 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import SearchBar from "../SearchBar/SearchBar";
 
 const MusicTable = ({songs, search, setSearch}) => {
+
+  // const [editBtn, setEditBtn] = useState('');
+  // const [deleteBtn, setDeleteBtn] = useState('');
+
+  const editBntHandle = (event) => {
+
+    alert('Functionality coming soon!');
+
+  }
+  const deleteBntHandle = (event) => {
+
+    alert('Functionality coming soon!');
+
+  }
+
   return (
     <div className="table-container">
       <SearchBar songs={songs} search={search} setSearch={setSearch}/>
@@ -24,8 +39,8 @@ const MusicTable = ({songs, search, setSearch}) => {
                 <td>{songs.album}</td>
                 <td>{songs.release_date}</td>
                 <td>{songs.genre}</td>
-                <button className="edit-delete">Edit</button>
-                <button className="edit-delete">Delete</button>
+                <button className="edit-delete" onClick={editBntHandle}>Edit</button>
+                <button className="edit-delete" onClick={deleteBntHandle}>Delete</button>
               </tr>
             );
           })}
