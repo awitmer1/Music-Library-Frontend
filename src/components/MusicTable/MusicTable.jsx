@@ -1,8 +1,5 @@
 import React from "react";
 import SearchBar from "../SearchBar/SearchBar";
-// import 'bootstrap/dist/css/bootstrap.min.css';  
-// // import Table from 'react-bootstrap/Table'
-// import {Table} from 'react-bootstrap';  
 
 const MusicTable = ({songs, search, setSearch}) => {
   return (
@@ -27,6 +24,8 @@ const MusicTable = ({songs, search, setSearch}) => {
                 <td>{songs.album}</td>
                 <td>{songs.release_date}</td>
                 <td>{songs.genre}</td>
+                <button className="edit-delete">Edit</button>
+                <button className="edit-delete">Delete</button>
               </tr>
             );
           })}
