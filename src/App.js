@@ -1,32 +1,52 @@
 import { useEffect, useState } from "react";
-// import 'bootstrap/dist/css/bootstrap.css';
 import "./App.css";
 import Header from "./components/Header/Header";
 import MusicTable from "./components/MusicTable/MusicTable";
 import axios from "axios";
 import AddMusic from "./components/AddMusic/AddMusic";
 
-function App() {
+// TODO Make popup for song edit (put requests)
+// TODO Add Y/N Prompt to confirm song delete
+// TODO Search by date
 
+function App() {
   const [songs, setSongs] = useState([]);
   const [search, setSearch] = useState("");
+  const [resetSearch, setResetSearch] = useState("");
   const [addMusicBtn, setAddMusicBtn] = useState("");
+  const [delMusicBtn, setDelMusicBtn] = useState("");
 
   useEffect(() => {
     getAllSongs();
-    setAddMusicBtn("")
+    setAddMusicBtn("");
   }, [addMusicBtn]);
 
+  useEffect(() => {
+    getAllSongs();
+    setDelMusicBtn("");
+  }, [delMusicBtn]);
 
-  // useEffect (() => {
-  //   let filteredSongs = songs;
+  useEffect(() => {
+    getAllSongs();
+    setResetSearch("");
+  }, [resetSearch]);
 
-  //   if (buttonClick !== "") {
-  //     filteredSongs = filteredSongs.filter((song) => song.title.includes(buttonClick))
-  //   }
+  useEffect(() => {
+    let songFilter = songs.filter((song) => {
+      if (search === "") {
+        return song;
+      } else if (
+        song.title.toLowerCase().includes(search.toLowerCase()) ||
+        song.artist.toLowerCase().includes(search.toLowerCase()) ||
+        song.album.toLowerCase().includes(search.toLowerCase()) ||
+        song.genre.toLowerCase().includes(search.toLowerCase())
+      ) {
+        return song;
+      }
+    });
 
-  //   setSongs(filteredSongs);
-  // }, [buttonClick]);
+    setSongs(songFilter);
+  }, [search]);
 
   async function getAllSongs() {
     const response = await axios.get("http://127.0.0.1:8000/api/music/");
@@ -38,8 +58,14 @@ function App() {
     <>
       <Header />
       <body className="app-body">
-        <AddMusic setAddMusicBtn={setAddMusicBtn}/>
-        <MusicTable songs={songs} search={search} setSearch={setSearch}/>
+        <AddMusic setAddMusicBtn={setAddMusicBtn} />
+        <MusicTable
+          songs={songs}
+          search={search}
+          setSearch={setSearch}
+          setResetSearch={setResetSearch}
+          setDelMusicBtn={setDelMusicBtn}
+        />
       </body>
     </>
   );
