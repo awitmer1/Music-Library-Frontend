@@ -57,7 +57,6 @@ const MusicTable = ({
           {songs.map((songs) => {
             return (
               <tr key={songs.id}>
-                <td>{songs.id}</td>
                 <td>{songs.title}</td>
                 <td>{songs.artist}</td>
                 <td>{songs.album}</td>
